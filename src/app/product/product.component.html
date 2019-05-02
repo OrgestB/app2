@@ -1,0 +1,10 @@
+<div (click)="showDetails()" class="gallery">
+<img src="{{cd.cover}}" width="600" height="400">
+<p>Album: {{cd.name}}</p>
+<div *ngIf="isClicked">
+<p>Arist: {{cd.artist}}</p>
+<p>Genre: {{cd.genre}}</p>
+<p>Year: {{cd.year}}</p>
+<p>Price: {{cd.price|currency:'EUR'}}</p>
+</div>
+</div>

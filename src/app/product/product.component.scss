@@ -1,0 +1,17 @@
+.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .gallery :hover {
+        background-color: #555555;
+        color: white;
+        opacity:0.8;
+        }
+      .gallery img {
+        width: 100%;
+        height: auto;}
+
+        
