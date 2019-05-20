@@ -1,3 +1,35 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-product-list></app-product-list>
-<router-outlet></router-outlet>
+<div style="height: 100vh;">
+<mat-toolbar color="primary">
+    <span>Responsive Navigation</span>
+    <span class="example-spacer"></span>
+   <div fxShow="true" fxHide.lt-md="true">
+     <a *ngFor="let link of navLinks" [routerLink]="link.path" mat-button>{{link.label}}</a>
+   </div>
+        
+  
+        <div fxShow="true" fxHide.gt-sm="true">
+            <a (click)="sidenav.toggle()">Show Side Menu</a>
+          </div>
+   </mat-toolbar>
+   <mat-sidenav-container fxFlexFill class="example-container">
+      <mat-sidenav #sidenav fxLayout="column">
+        <div fxLayout="column">
+          <a (click)="sidenav.toggle()" mat-button>Close</a>
+          <a routerLink="/rock" mat-button>Rock</a>
+          <a routerLink="/pop" mat-button>Pop</a>
+          <a href="#" mat-button>Hip-Hop/Rap</a>
+          <a href="#" mat-button>Alternative</a>
+          <a href="#" mat-button>Indie</a>
+          <a href="#" mat-button>Electronic</a>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+    
+    
+  
+
+ 
+

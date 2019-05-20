@@ -1,4 +1,4 @@
-import {CdDetails} from './product/productClass';
+import {CdDetails} from '../models/productClass';
 import {Injectable} from '@angular/core';
 
 

@@ -1,0 +1,115 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "John",
+      "email": "johnsnow@gmail.com",
+      "password": " "
+    },
+    {
+      "id": 1,
+      "name": "Sebastian",
+      "email": "sebastian@codingthesmartway.com",
+      "password": " "
+    },
+    {
+      "id": 2,
+      "name": "Steve",
+      "email": "steve@codingthesmartway.com",
+      "password": " "
+    },
+    {
+      "id": 3,
+      "name": "Ann",
+      "email": "ann@codingthesmartway.com",
+      "password": " "
+    },
+    {
+      "email": "beqiriorgest@gmail.com",
+      "name": "Orgest",
+      "password": "Loool1234",
+      "id": 4
+    },
+    {
+      "email": "beqiriorgest@gmail.com",
+      "name": "Orgest Beqiri",
+      "password": "Lolkjh123",
+      "id": 5
+    },
+    {
+      "email": "beqiriorgest@gmail.com",
+      "name": "Orgest Beqiri",
+      "password": "loool1234L",
+      "id": 6
+    },
+    {
+      "email": "beqiriorgest@gmail.com",
+      "name": "Orgest Beqiri",
+      "password": "Orgest1997",
+      "id": 7
+    },
+    {
+      "email": "test@test.com",
+      "name": "testUser",
+      "password": "Test1234",
+      "id": 8
+    }
+  ],
+  "cd": [
+    {
+      "name": "HBHBHB",
+      "artist": "Florence + The Machine",
+      "genre": "Indie rock",
+      "year": 2015,
+      "price": 10,
+      "cover": "https://dvfnvgxhycwzf.cloudfront.net/media/SharedImage/imageFull/.fX9VK_tU/SharedImage-47481.jpg?t=c4398efdfd3fef7f8604"
+    },
+    {
+      "name": "Wasteland, Baby",
+      "artist": "Hozier",
+      "genre": "Alternative/Indie",
+      "year": 2019,
+      "price": 13.99,
+      "cover": "https://m.media-amazon.com/images/I/718WDEiQGUL._SS500_.jpg"
+    },
+    {
+      "name": "Gioventù bruciata",
+      "artist": "Mahmood",
+      "genre": "Pop",
+      "year": 2019,
+      "price": 12,
+      "cover": "https://i.scdn.co/image/0387f4202c018e9ab70cc4942206182c48d9d0de"
+    },
+    {
+      "name": "Grace",
+      "artist": "Jeff Buckley",
+      "genre": "Rock",
+      "year": 1994,
+      "price": 10,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/0a/ff/25/0aff25a0-7000-6ace-dec0-75c74ac5308e/886445517880.jpg/600x600bf.png"
+    },
+    {
+      "name": "The Dark Side",
+      "artist": "Pink Floyd",
+      "genre": "Rock",
+      "year": 1973,
+      "price": 10,
+      "cover": "https://www.head-records.com/documents/mailorder/images/4053.jpg"
+    },
+    {"name": "Abbey Road",
+      "artist": "The Beatles",
+      "genre": "Rock",
+      "year": 1969,
+      "price": 10,
+      "cover": "http://www.whizzpast.com/wp-content/uploads/2013/10/Abbey+Road.jpg"},
+      {
+        "name": "A Night at the Opera",
+      "artist": "Queen",
+      "genre": "Rock",
+      "year": 1975,
+      "price": 10,
+      "cover": "https://images-na.ssl-images-amazon.com/images/I/71eu02SZK1L._SL1058_.jpg"
+      }
+
+  ]
+}
