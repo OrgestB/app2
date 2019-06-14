@@ -1,26 +1,33 @@
-import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { of } from "rxjs";
-import {
-  debounceTime,
-  map,
-  distinctUntilChanged,
-  filter
-} from "rxjs/operators";
+import{BackendService} from '../../services/backend.service';
+import {CdDetails} from '../../models/productClass';
+import{AppComponent} from '../../app.component';
+import {debounceTime,map,distinctUntilChanged,filter} from "rxjs/operators";
 import { fromEvent } from 'rxjs';
 import { HttpClient, HttpParams } from "@angular/common/http";
 
+const APIKEY = "58684XXX";
+ 
+
 @Component({
-  selector: 'app-genre',
-  templateUrl: './genre.component.html',
-  styleUrls: ['./genre.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class GenreComponent implements OnInit {
-  @ViewChild('movieSearchInput',{ static: true }) movieSearchInput: ElementRef;
+export class SearchComponent implements OnInit {
+  @ViewChild('movieSearchInput', { static: true }) movieSearchInput: ElementRef;
   apiResponse:any;
   isSearching:boolean;
+  cdArt : CdDetails[]=[];
+  artist: string = '';
+  
 
-  constructor( private httpClient: HttpClient) { 
-    this.isSearching = false;
+  constructor(
+    private cdArtist: BackendService,
+    private app : AppComponent,
+    private httpClient: HttpClient
+  ) { this.isSearching = false;
     this.apiResponse = [];}
 
   ngOnInit() {
@@ -47,16 +54,12 @@ export class GenreComponent implements OnInit {
           console.log('error',err);
         });
       });
-
+  }
+  searchGetCall(term: string) {
+    if (term === '') {
+      return of([]);
     }
-    searchGetCall(term: string) {
-      if (term === '') {
-        return of([]);
-        
-      }
-      return this.httpClient.get('http://localhost:3000/cd?q=' + term);
-    }
-
-  
+    return this.httpClient.get('http://localhost:3000/cd?q=' + term);
+  }
 
 }

@@ -1,3 +1,7 @@
-<div *ngFor="let cd of Products">
-    <app-product [cd]="cd"></app-product>
+<div>
+    <div *ngFor="let cd of Products | paginate: { itemsPerPage: 8, currentPage: p }">
+        <app-product [cd]="cd"></app-product>
+    </div>
+    <pagination-controls (pageChange)="p = $event" class="footer"></pagination-controls>
+    
 </div>

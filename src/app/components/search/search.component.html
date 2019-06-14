@@ -1,0 +1,39 @@
+
+<div class="container" style="text-align:center">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>Angular 7 Search using Debounce in RXJS 6.X.X</h1>
+            <input type="text" #movieSearchInput class="form-control"
+                placeholder="Type any movie name" />
+ 
+        </div>
+    </div>
+    <div class="row" *ngIf="isSearching">
+        <div class="col-12 text-center">
+ 
+            <h4>Searching ... </h4>
+ 
+        </div>
+    </div>
+    <div class="row">
+        <ng-container *ngIf="!apiResponse || apiResponse.length === 0; else elseTemplate">
+ 
+            <div class="col-12 text-center">
+                <div class="alert alert-danger" role="alert">
+                    {{apiResponse['Error']}}
+ 
+                </div>
+            </div>
+ 
+        </ng-container>
+        <ng-template #elseTemplate>
+ 
+ 
+            <div class="col-3" *ngFor="let cd of apiResponse">
+                    <app-product [cd]="cd"></app-product>
+ 
+            </div>
+ 
+        </ng-template>
+    </div>
+</div>

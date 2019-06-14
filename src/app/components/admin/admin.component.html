@@ -1,0 +1,14 @@
+<mat-list role="list" *ngFor="let user of users">
+    <mat-card class="example-card">
+        <mat-card-header><button *ngIf="!user.role"mat-raised-button color="primary" (click)="deleteUser(user.id)"> <mat-icon>delete</mat-icon></button>
+          <div class="index">{{user.id}}</div>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{user.name}}</mat-card-title>
+          <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    <mat-list-item role="listitem"></mat-list-item>
+  </mat-list>
+  
+    
+    

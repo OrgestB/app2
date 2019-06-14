@@ -1,3 +1,41 @@
-<p>
-  genre works!
-</p>
+<div class="container" >
+    <div class="row">
+        <div >
+            <mat-form-field >
+            <input matInput  type="text" #movieSearchInput class="form-control"
+                placeholder="Search" />
+            </mat-form-field>
+ 
+        </div>
+    </div>
+    <div class="row" *ngIf="isSearching">
+        <div class="col-12 text-center">
+ 
+            <h4>Searching ... </h4><mat-spinner></mat-spinner>
+ 
+        </div>
+    </div>
+    <div class="row">
+        <ng-container *ngIf="apiResponse.length==0; else elseTemplate">
+ 
+            <div class="col-12 text-center">
+                <div class="alert alert-danger" role="alert">
+                    <mat-error>No results</mat-error>
+ 
+                </div>
+            </div>
+ 
+        </ng-container>
+        <ng-template #elseTemplate>
+ 
+ 
+            <div class="col-3" >
+                <div *ngFor="let cd of apiResponse"> 
+                    <app-product [cd]="cd"></app-product>
+                </div>
+                
+            </div>
+ 
+        </ng-template>
+    </div>
+</div>

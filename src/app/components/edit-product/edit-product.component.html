@@ -1,0 +1,38 @@
+<div class="container" *ngIf="!post; else forminfo" novalidate>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+  
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Artist" formControlName="artist" [(ngModel)]='cd.artist'>
+        <mat-error *ngIf="!formGroup.controls['artist'].valid && formGroup.controls['artist'].touched">
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Album" formControlName="album" [(ngModel)]='cd.name'>
+        <mat-error *ngIf="!formGroup.controls['album'].valid && formGroup.controls['album'].touched">
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Price" type="number" formControlName="price" [(ngModel)]='cd.price'>
+        <mat-error *ngIf="!formGroup.controls['price'].valid && formGroup.controls['price'].touched">
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Year" type="number" formControlName="year" [(ngModel)]='cd.year'>
+        <mat-error *ngIf="!formGroup.controls['year'].valid && formGroup.controls['year'].touched">
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Genre" formControlName="genre" [(ngModel)]='cd.genre'>
+        <mat-error *ngIf="!formGroup.controls['genre'].valid && formGroup.controls['genre'].touched">
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="AlbumCover" formControlName="cover" [(ngModel)]='cd.cover'>
+        <mat-error *ngIf="!formGroup.controls['cover'].valid && formGroup.controls['cover'].touched">
+        </mat-error>
+      </mat-form-field>
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit Form</button>
+      </div>
+     </form> 
+    </div>

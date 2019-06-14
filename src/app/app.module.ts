@@ -7,11 +7,11 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { GenreComponent } from './components/genre/genre.component';
 import { LoginComponent } from './components/login/login.component';
 import { CategoriesComponent } from './components/categories/categories.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule, MatBadgeModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import 'hammerjs'
@@ -45,10 +45,22 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatStepperModule,
+  MatDividerModule
 } from '@angular/material';
 import { RegisterComponent } from './components/register/register.component';
-import { RockComponent } from './components/rock/rock.component';
-import { PopComponent } from './components/pop/pop.component';
+import { OrderComponent } from './components/order/order.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { SearchComponent } from './components/search/search.component';
+import { ToastrModule } from 'ngx-toastr';
+import { CartComponent } from './components/cart/cart.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { DataService } from './services/dataService';
+import { UniqueEmailValidatorDirective } from './services/unique-email-validator.directive';
+import { CdFilterPipe } from './components/product-list/cd-filter.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -59,9 +71,19 @@ import { PopComponent } from './components/pop/pop.component';
     LoginComponent,
     CategoriesComponent,
     RegisterComponent,
-    RockComponent,
-    PopComponent,
-    
+    OrderComponent,
+    AdminComponent,
+    SearchComponent,
+    CartComponent,
+    AddProductComponent,
+    EditProductComponent,
+    UniqueEmailValidatorDirective,
+    CdFilterPipe
+
+
+  ],
+  entryComponents: [
+    OrderComponent
   ],
   imports: [
     HttpClientModule,
@@ -71,10 +93,12 @@ import { PopComponent } from './components/pop/pop.component';
     RouterModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatCheckboxModule,
+    MatDividerModule,
     BrowserAnimationsModule,
     BrowserModule,
+    MatBadgeModule,
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
@@ -110,8 +134,11 @@ import { PopComponent } from './components/pop/pop.component';
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule,
+    NgxPaginationModule,
+    ToastrModule.forRoot(),
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,35 +1,49 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="height: 100vh;">
-<mat-toolbar color="primary">
-    <span>Responsive Navigation</span>
+  <mat-toolbar color="primary">
+    <span>CdShop</span>
+
+
     <span class="example-spacer"></span>
-   <div fxShow="true" fxHide.lt-md="true">
-     <a *ngFor="let link of navLinks" [routerLink]="link.path" mat-button>{{link.label}}</a>
-   </div>
-        
-  
-        <div fxShow="true" fxHide.gt-sm="true">
-            <a (click)="sidenav.toggle()">Show Side Menu</a>
-          </div>
-   </mat-toolbar>
-   <mat-sidenav-container fxFlexFill class="example-container">
-      <mat-sidenav #sidenav fxLayout="column">
-        <div fxLayout="column">
-          <a (click)="sidenav.toggle()" mat-button>Close</a>
-          <a routerLink="/rock" mat-button>Rock</a>
-          <a routerLink="/pop" mat-button>Pop</a>
-          <a href="#" mat-button>Hip-Hop/Rap</a>
-          <a href="#" mat-button>Alternative</a>
-          <a href="#" mat-button>Indie</a>
-          <a href="#" mat-button>Electronic</a>
-        </div>
-      </mat-sidenav>
-      <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-    
-    
-  
+    <div fxShow="true" fxHide.lt-md="true" *ngIf="!currentUser">
 
- 
+      <a *ngFor="let link of navLinks" [routerLink]="link.path" mat-button>{{link.label}}</a>
+    </div>
+    <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" mat-button>Home</a>
+        <a class="nav-item nav-link" routerLink="/cart" mat-button *ngIf="!isAdmin">
+          <mat-icon matBadge="{{message}}" matBadgeColor="warn">shopping_cart</mat-icon>  
+        </a>
+        <a class="nav-item nav-link" routerLink="/genres" mat-button>Browse</a>
+        <a class="nav-item nav-link" routerLink="/admin" mat-button *ngIf="isAdmin">Admin</a>
+        <a class="nav-item nav-link" routerLink="/addProduct" mat-button *ngIf="isAdmin">Add a product</a>
+        <a class="nav-item nav-link" (click)="logout()" mat-button>Logout</a>
+      </div>
+    </nav>
 
+    <div fxShow="true" fxHide.gt-sm="true">
+      <a (click)="sidenav.toggle()"><i class="material-icons">
+          list
+        </i></a>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav #sidenav fxLayout="column">
+      <div fxLayout="column">
+        <a (click)="sidenav.toggle()" mat-button>Close</a><br>
+        <a routerLink="/home/Rock" routerLinkActive="active" mat-button>Rock</a><br>
+        <a routerLink="/home/Pop" routerLinkActive="active" mat-button>Pop</a><br>
+        <a routerLink="/home/Hip-HopRap" routerLinkActive="active" mat-button>Hip-Hop/Rap</a><br>
+        <a routerLink="/home/Alternative" routerLinkActive="active" mat-button>Alternative</a><br>
+        <a routerLink="/home/Indie" routerLinkActive="active" mat-button>Indie</a><br>
+        <a routerLink="/home/Electronic" routerLinkActive="active" mat-button>Electronic</a><br>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <div class="row">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,10 +1,19 @@
-<div (click)="showDetails()" class="gallery">
-<img src="{{cd.cover}}" width="600" height="400">
-<p>Album: {{cd.name}}</p>
-<div *ngIf="isClicked">
-<p>Arist: {{cd.artist}}</p>
-<p>Genre: {{cd.genre}}</p>
-<p>Year: {{cd.year}}</p>
-<p>Price: {{cd.price|currency:'EUR'}}</p>
-</div>
-</div>
+<mat-card (click)="showDetails()" class="gallery">
+    <mat-card-header>
+      <mat-card-title>{{cd.name}}</mat-card-title>
+      <mat-card-subtitle>{{cd.artist}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{cd.cover}}">
+    <mat-card-content *ngIf="isClicked">
+        <p>Arist: {{cd.artist}}</p>
+        <p>Genre: {{cd.genre}}</p>
+        <p>Year: {{cd.year}}</p>
+        <p>Price: {{cd.price|currency:'EUR'}}</p>
+        <button mat-button (click)="openDialog()" *ngIf="!isAdmin">Buy </button>
+          <mat-card-actions *ngIf="isAdmin">
+              <a [routerLink]="['/editProduct/',cd.id]" routerLinkActive="active" mat-button >Edit</a>
+              <button mat-button (click)="deleteProduct(cd.id)" >Delete</button>
+              
+            </mat-card-actions>
+          </mat-card-content>
+  </mat-card>
