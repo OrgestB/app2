@@ -6,7 +6,6 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { GenreComponent } from './components/genre/genre.component';
 import { LoginComponent } from './components/login/login.component';
-import { CategoriesComponent } from './components/categories/categories.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatBadgeModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -61,6 +60,7 @@ import { DataService } from './services/dataService';
 import { UniqueEmailValidatorDirective } from './services/unique-email-validator.directive';
 import { CdFilterPipe } from './components/product-list/cd-filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +69,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ProductListComponent,
     GenreComponent,
     LoginComponent,
-    CategoriesComponent,
     RegisterComponent,
     OrderComponent,
     AdminComponent,
@@ -78,7 +77,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddProductComponent,
     EditProductComponent,
     UniqueEmailValidatorDirective,
-    CdFilterPipe
+    CdFilterPipe,
+    HistoryComponent
 
 
   ],

@@ -33,7 +33,6 @@ export class AuthenticationService {
                     localStorage.setItem('currentUser', JSON.stringify(useri));
                     this.currentUserSubject.next(useri); 
                     this.hasMatched = true;
-                    console.log('u gjet');
                     observer.next(true);
                     observer.complete();
                     
@@ -59,6 +58,7 @@ export class AuthenticationService {
           this.emailfound=true;
           observer.next(true);
           observer.complete();}
+          
       }})
     )
    }

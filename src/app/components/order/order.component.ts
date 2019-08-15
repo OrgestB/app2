@@ -33,7 +33,7 @@ export class OrderComponent implements OnInit {
       'cover': data.cover
     }
     this.http.post('http://localhost:3000/orders',this.order).subscribe((res: Response)=>{
-      this.toastr.info('Added successfully', 'EMP. Register');
+      this.toastr.info('Added to cart successfully');
       })
     }
     addProduct(data){

@@ -7,6 +7,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import {Role} from '../../models/role';
 import { BackendService } from 'src/app/services/backend.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -30,7 +31,8 @@ export class ProductComponent implements OnInit {
   constructor(public dialog: MatDialog,
     private authenticationService: AuthenticationService,
     private backendService: BackendService,
-    private toastr : ToastrService) { 
+    private toastr : ToastrService,
+    private router : Router) { 
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
   get isAdmin() {
@@ -41,14 +43,16 @@ export class ProductComponent implements OnInit {
   
   }
   openDialog(): void {
+    if (this.currentUser){
     const dialogRef = this.dialog.open(OrderComponent, {
       width: '500px',
       height: '400px',
       data: {name: this.cd.artist, album: this.cd.name, price: this.cd.price, cover: this.cd.cover},
-    });
+    })}else {this.router.navigate(['/login'])}
   }
   deleteProduct(id:number){
     this.backendService.deleteProduct(id).subscribe(res=>{
+      this.router.navigate(['']);
       this.toastr.warning('Product Deleted successfully');
     })
   }

@@ -80,12 +80,10 @@ export class LoginComponent implements OnInit {
       this.authenticationService.login(this.post.email, this.post.password).subscribe((data)=>{
         console.log(data);
       if(data){
-        console.log('im here');
         this.router.navigate(['/home']);
        }else{
          this.noMatch=true;
          this.createForm();
-         console.log('im here lonelyyyyy');
        }});
                 
     }

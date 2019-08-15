@@ -68,7 +68,8 @@ export class RegisterComponent implements OnInit {
     this.post={
     'email': post.email,
     'name': post.name,
-    'password':post.password }
+    'password':post.password,
+    'role': "User" }
     this.http.post('http://localhost:3000/users',this.post).subscribe((res: Response)=>{
       this.isAdded=true;})
     

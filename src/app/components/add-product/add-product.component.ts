@@ -50,7 +50,7 @@ export class AddProductComponent implements OnInit {
        'cover': post.cover}
       this.http.post('http://localhost:3000/cd',this.post).subscribe((res: Response)=>{
         this.router.navigate(['/home']);
-        this.toastr.info('Added successfully', 'EMP. Register');
+        this.toastr.info('Product Added successfully');
         })
       
   }

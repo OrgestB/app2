@@ -25,6 +25,9 @@ export class BackendService{
     getGenreCd(genre: string){
         return this.http.get<CdDetails[]>('http://localhost:3000/cd?q='+genre);
     }
+    getPurchasedHistory(){
+        return this.http.get('http://localhost:3000/purchase');
+    }
    
     
     deleteUser(id: number){

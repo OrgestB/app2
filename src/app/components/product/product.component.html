@@ -9,7 +9,7 @@
         <p>Genre: {{cd.genre}}</p>
         <p>Year: {{cd.year}}</p>
         <p>Price: {{cd.price|currency:'EUR'}}</p>
-        <button mat-button (click)="openDialog()" *ngIf="!isAdmin">Buy </button>
+        <button mat-button (click)="openDialog()" *ngIf="!isAdmin" #other>Buy </button>
           <mat-card-actions *ngIf="isAdmin">
               <a [routerLink]="['/editProduct/',cd.id]" routerLinkActive="active" mat-button >Edit</a>
               <button mat-button (click)="deleteProduct(cd.id)" >Delete</button>

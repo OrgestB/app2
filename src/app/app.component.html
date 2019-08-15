@@ -15,6 +15,7 @@
         <a class="nav-item nav-link" routerLink="/cart" mat-button *ngIf="!isAdmin">
           <mat-icon matBadge="{{message}}" matBadgeColor="warn">shopping_cart</mat-icon>  
         </a>
+        <a class="nav-item nav-link" routerLink="/history" mat-button *ngIf="!isAdmin">History</a>
         <a class="nav-item nav-link" routerLink="/genres" mat-button>Browse</a>
         <a class="nav-item nav-link" routerLink="/admin" mat-button *ngIf="isAdmin">Admin</a>
         <a class="nav-item nav-link" routerLink="/addProduct" mat-button *ngIf="isAdmin">Add a product</a>

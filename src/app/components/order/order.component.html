@@ -7,7 +7,6 @@
 <p>Price:{{data.price*quantity|currency:'EUR'}}</p></div>
 <img mat-card-image src="{{data.cover}}">
 <mat-form-field class="example-full-width">
-    <input matInput placeholder="Quantity" type="number" value="quantity" [(ngModel)]="quantity">
+    <input matInput placeholder="Quantity" type="number" [(ngModel)]="quantity">
      </mat-form-field> 
-    <button mat-raised-button color="primary">Buy It Now</button>
     <button mat-raised-button color="primary"(click)="addProduct(data)">Add To Cart</button>

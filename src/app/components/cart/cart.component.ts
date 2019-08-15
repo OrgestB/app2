@@ -54,8 +54,8 @@ export class CartComponent implements OnInit {
   addToPurchase(data){
     this.buy={
       'clientId': data.clientId,
-      'name': data.album,
-      'artist': data.name,
+      'name': data.name,
+      'artist': data.artist,
       'quantity': data.quantity,
       'price': data.price,
       'cover': data.cover

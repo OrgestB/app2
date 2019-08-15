@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
   deleteUser(id: number){
     this.usersBack.deleteUser(id).subscribe(res=>{
       this.usersBack.getUsers().subscribe(data=> this.users = data);
-      this.toastr.warning('Deleted successfully', 'EMP. Register');
+      this.toastr.warning('User deleted successfully');
     });
   }
 
